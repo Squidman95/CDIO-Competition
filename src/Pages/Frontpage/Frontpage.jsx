@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Frontpage.scss";
+import logo from "../../logo.svg";
 
 const Frontpage = (props) => {
   return (
     <div className="Frontpage-Content">
       <div className="Frontpage-resultscontainer">
-        <h2 className={`Frontpage-resultscontainer-searchresultHeader`}>
-          Search result:
-        </h2>
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Den store CDIO - hjemmeside - Tester Hooks</p>
       </div>
     </div>
   );
