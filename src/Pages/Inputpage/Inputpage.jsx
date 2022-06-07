@@ -5,25 +5,26 @@ import { submitSolve, removeSolve } from "../../Services/DBServices";
 import Button from "../../Components/Button/Button";
 import "./Inputpage.scss";
 
-function submitSolitaire(solitaireID) {
-  let { groupid: groupID } = useParams();
-  if (Number.isInteger(solitaireID)) {
-    submitSolve(groupID, solitaireID);
-  } else {
-    alert("The input must be an integer");
-  }
-}
-
-function regretSubmit(solitaireID) {
-  let { groupid: groupID } = useParams();
-  if (Number.isInteger(solitaireID)) {
-    removeSolve(groupID, solitaireID);
-  } else {
-    alert("The input must be an integer");
-  }
-}
-
 const Inputpage = (props) => {
+  let solitaireID = 1; // tmp value
+  let { groupid: groupID } = useParams();
+
+  function submitSolitaire(solitaireID) {
+    if (Number.isInteger(solitaireID)) {
+      submitSolve(groupID, solitaireID);
+    } else {
+      alert("The input must be an integer");
+    }
+  }
+
+  function regretSubmit(solitaireID) {
+    if (Number.isInteger(solitaireID)) {
+      removeSolve(groupID, solitaireID);
+    } else {
+      alert("The input must be an integer");
+    }
+  }
+
   return (
     <div className="InputpageContainer">
       <div className="InputboxContainer">{/* <Inputbox /> */}</div>
