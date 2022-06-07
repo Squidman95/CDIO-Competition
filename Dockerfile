@@ -16,4 +16,4 @@ RUN yarn install
 RUN mkdir public
 COPY --from=build /app/build ./public
 
-CMD ["yarn start"]
+CMD ["yarn", "start"]
