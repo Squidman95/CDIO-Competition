@@ -22,6 +22,7 @@ const sockIo = new Server(socketServer,{
 
 sockIo.on('connection',(socket)=>{
     console.log("User connected! :");
+    socket.emit("chat", chat);
     socket.on('msg', (message)=>{
         chat+="\r\n" + socket.id + ": " + message;
         console.log("chatState: " + chat);
