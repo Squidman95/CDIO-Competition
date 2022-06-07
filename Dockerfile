@@ -7,13 +7,15 @@ COPY yarn.lock ./
 
 RUN yarn install
 
-COPY . ./
+COPY src/ ./src
+COPY public/ ./public
+
 RUN yarn build
 
 FROM node:18-alpine as prod
 COPY api/ ./
 RUN yarn install
-RUN mkdir public
-COPY --from=build /app/build ./public
+RUN mkdir src/public
+COPY --from=build /app/build ./stc/public
 
 CMD ["yarn", "start"]
