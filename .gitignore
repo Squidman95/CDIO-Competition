@@ -10,6 +10,7 @@
 
 # production
 **/build
+/api/src/public
 
 # misc
 .DS_Store
