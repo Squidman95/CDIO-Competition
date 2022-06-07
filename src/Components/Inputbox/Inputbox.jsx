@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
 const Inputbox = (props) => {
-  let { loginInformation, setLoginInformation } = props;
+  // let { loginInformation, setLoginInformation } = props;
+  let { setSolitaireID } = props;
 
   return (
-    <div className="popupInputContainer">
+    <div className="inputBoxContainer">
       <h1>{props.title}</h1>
-      <label>First Name:</label>
+      <label>Solitaire ID:</label>
       <input
         type="text"
-        value={loginInformation.fname}
-        onChange={(e) =>
-          setLoginInformation({ ...loginInformation, fname: e.target.value })
+        onChange={
+          (e) => setSolitaireID(e.target.value)
+          // setLoginInformation({ ...loginInformation, fname: e.target.value })
         }
       />
     </div>

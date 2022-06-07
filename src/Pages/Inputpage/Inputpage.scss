@@ -7,12 +7,24 @@
     align-content: space-around;
     text-align: center;
     width: 80%;
-  }
+}
 
-  .InnerButtonContainer {
+.InnerButtonContainer {
     position: relative;
     text-align: center;
     color: rgb(0, 0, 0);
     padding: 1%;
     width: 100%;
-  }
+}
+
+.InputpageContainer {
+    display: flex;
+    justify-content: center;
+    // width: 100%;
+}
+
+.InputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
