@@ -16,6 +16,6 @@ FROM node:18-alpine as prod
 COPY api/ ./
 RUN yarn install
 RUN mkdir src/public
-COPY --from=build /app/build ./stc/public
+COPY --from=build /app/build ./src/public
 
 CMD ["yarn", "start"]
