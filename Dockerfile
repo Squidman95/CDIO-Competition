@@ -7,11 +7,15 @@ COPY yarn.lock ./
 
 RUN yarn install
 
-COPY . ./
+COPY src/ ./src
+COPY public/ ./public
+
 RUN yarn build
 
-FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+FROM node:18-alpine as prod
+COPY api/ ./
+RUN yarn install
+RUN mkdir src/public
+COPY --from=build /app/build ./src/public
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["yarn", "start"]
