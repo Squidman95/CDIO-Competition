@@ -10,7 +10,7 @@ const Frontpage = (props) => {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Den store CDIO - hjemmeside - Tester Hooks</p>
       </div>
-      <div className="ProductButtonContainer">
+      <div className="ButtonContainer">
         <Button
           to="/Inputpage/1"
           onClick={() => {
@@ -18,7 +18,7 @@ const Frontpage = (props) => {
           }}
           imageSrc="/assets/images/icons/horse-icon.png"
           imageClass="default-img-loc"
-          btnText="Buy now!"
+          btnText="Input Page!"
         />
       </div>
     </div>

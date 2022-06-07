@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+  display:flex;
+  flex-direction: column;
+  --topbar-heigth: 70px;
+}
+
+
+.App-topbar-container{
+  position: fixed;
+  width: 100%;
+  height: var(--topbar-heigth);
+  z-index: 100;
+}
+
+.App-content-container{
+  width: 100%;
+  height: 100%;
+  margin-top: var(--topbar-heigth);;
 }
 
 .App-logo {

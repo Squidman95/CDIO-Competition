@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import React, {useEffect, useState} from 'react'
 import Frontpage from './Pages/Frontpage/Frontpage.jsx';
 import Inputpage from './Pages/Inputpage/Inputpage.jsx';
