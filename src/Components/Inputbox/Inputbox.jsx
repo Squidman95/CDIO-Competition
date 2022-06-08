@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 const Inputbox = (props) => {
   // let { loginInformation, setLoginInformation } = props;
-  let { setSolitaireID } = props;
+  let { setSolitaireID, title } = props;
 
   return (
     <div className="inputBoxContainer">

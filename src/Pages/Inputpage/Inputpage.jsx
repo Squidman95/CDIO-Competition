@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { submitSolve, removeSolve } from "../../Services/DBServices";
+import {
+  getSolutions,
+  submitSolve,
+  removeSolve,
+} from "../../Services/DBServices";
 import Inputbox from "../../Components/Inputbox/Inputbox";
 import Button from "../../Components/Button/Button";
 import "./Inputpage.scss";
