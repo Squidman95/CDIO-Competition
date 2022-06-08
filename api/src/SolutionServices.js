@@ -49,16 +49,16 @@ function removeSolve(groupID, solitaireID){
     console.log("JSON object before deletion");
     console.log(json);
 
-    let group = json.filter(g => {return g.id == groupID})[0];
+    let group = json.filter(g => {return g.groupid == groupID})[0];
     const index = json.map(g => g.groupid).indexOf(groupID);
 
     removeById(group.solves, solitaireID);
 
-    json[index] = solve;
+    json[index] = group;
     fs.writeFileSync(solutionDataPath, JSON.stringify(json, null, 2));
     console.log("JSON object after deletion");
     console.log(json);
-    return group;
+    return json;
 }
 
 const removeById = (jsonArray, solitaireID) => {
