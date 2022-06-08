@@ -24,16 +24,22 @@ function submitSolve(groupID, solitaireID){
         "solved": "true"
     };
     let json = JSON.parse(fs.readFileSync(solutionDataPath, {encoding:'utf8', flag:'r'}));
-    console.log("JSON object before addition");
-    console.log(json);
+    // console.log("JSON object before addition");
+    // console.log(json);
 
-    let group = json.filter(g => {return g.id == groupID})[0];
+    let group = json.filter(g => {return g.groupid == groupID})[0];
     const index = json.map(g => g.groupid).indexOf(groupID);
-    group.solves.push(solve);
-    json[index] = solve;
-    fs.writeFileSync(solutionDataPath, JSON.stringify(json, null, 2));
-    console.log("JSON object after addition");
-    console.log(json);
+    
+    let checkSolutionExist = group.solves.filter(s => {return s.solitaireid == solitaireID})[0];    // [0] Removes the square brackets
+    if(checkSolutionExist === undefined) {
+        console.log(`checkSolutionExist: ${checkSolutionExist} is undefined`);
+        group.solves.push(solve);
+        json[index] = group;
+        fs.writeFileSync(solutionDataPath, JSON.stringify(json, null, 2));
+    }
+    else {
+        console.log(`checkSolutionExist: ${checkSolutionExist} already exists`);
+    }
     return json;
 }
 

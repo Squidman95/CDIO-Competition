@@ -25,9 +25,14 @@ const sendMessage = (message, setMessage)=>{
     setMessage("");
 }
 
-const submitSolution = (message, setMessage)=>{
-    socket.emit('msg',message);
-    setMessage("");
+const submitSolution = (groupid, solitaireid)=>{
+    socket.emit('submit', {groupid, solitaireid});
+    console.log(`Emit submission of solution ${solitaireid} for group ${groupid}`);
 }
 
-export {callBackend, sendMessage, submitSolution}
+const removeSolution = (groupid, solitaireid)=>{
+    socket.emit('remove',{groupid, solitaireid});
+    console.log(`Emit removal of solution ${solitaireid} for group ${groupid}`);
+}
+
+export {callBackend, sendMessage, submitSolution, removeSolution}

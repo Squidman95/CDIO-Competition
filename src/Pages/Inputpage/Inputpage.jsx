@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
-  getSolutions,
-  submitSolve,
-  removeSolve,
-} from "../../Services/DBServices";
+  callBackend,
+  sendMessage,
+  submitSolution,
+  removeSolution,
+} from "../../Services/SocketServices.js";
+// import {
+//   getSolutions,
+//   submitSolve,
+//   removeSolve,
+// } from "../../Services/DBServices";
 import Inputbox from "../../Components/Inputbox/Inputbox";
 import Button from "../../Components/Button/Button";
 import "./Inputpage.scss";
@@ -15,16 +21,25 @@ const Inputpage = (props) => {
   const [solitaireID, setSolitaireID] = useState(1);
 
   function submitSolitaire(solitaireID) {
+    console.log(`Solution ID: ` + solitaireID);
+
     if (Number.isInteger(solitaireID)) {
-      submitSolve(groupID, solitaireID);
+      console.log(
+        `Input is integer: ${solitaireID} and groupID is valid: ${groupID}`
+      );
+      submitSolution(groupID, solitaireID);
     } else {
       alert("The input must be an integer");
     }
   }
 
   function regretSubmit(solitaireID) {
+    console.log(`Solution ID: ` + solitaireID);
     if (Number.isInteger(solitaireID)) {
-      removeSolve(groupID, solitaireID);
+      console.log(
+        `Input is integer: ${solitaireID} and groupID is valid: ${groupID}`
+      );
+      removeSolution(groupID, solitaireID);
     } else {
       alert("The input must be an integer");
     }
@@ -38,7 +53,7 @@ const Inputpage = (props) => {
           <div className="InnerButtonContainer">
             <Button
               onClick={() => {
-                submitSolve(solitaireID);
+                submitSolitaire(solitaireID);
               }}
               imageSrc="/assets/images/icons/bird-icon.png"
               imageClass="default-img-loc"
@@ -49,7 +64,7 @@ const Inputpage = (props) => {
           <div className="InnerButtonContainer">
             <Button
               onClick={() => {
-                submitSolitaire(solitaireID);
+                regretSubmit(solitaireID);
               }}
               imageSrc="/assets/images/icons/x-icon.png"
               imageClass="default-img-loc"

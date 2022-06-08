@@ -24,24 +24,25 @@ const sockIo = new Server(socketServer,{
 });
 
 sockIo.on('connection',(socket)=>{
-    console.log("User connected! :");
+    // console.log("User connected! :");
     socket.emit("chat", chat);
     state = getAllSolves();
     socket.emit("state", state);
-    console.log(state);
+    // console.log(state);
 
     socket.on('msg', (message)=>{
         chat+="\r\n" + socket.id + ": " + message;
         console.log("chatState: " + chat);
         sockIo.emit("chat", chat);
     })
+
     socket.on('submit', ({groupid, solitaireid}) => {
-        console.log("Submission: " + obj);
+        console.log("Submission: " + {groupid, solitaireid});
         state = submitSolve(groupid, solitaireid)
         sockIo.emit("state", state)
     })
     socket.on('remove', ({groupid, solitaireid}) => {
-        console.log("Removing: " + obj);
+        console.log("Removing: " + {groupid, solitaireid});
         state = removeSolve(groupid, solitaireid)
         sockIo.emit("state", state)
     })

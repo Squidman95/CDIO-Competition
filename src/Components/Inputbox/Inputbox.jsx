@@ -10,7 +10,7 @@ const Inputbox = (props) => {
       <input
         type="text"
         onChange={
-          (e) => setSolitaireID(e.target.value)
+          (e) => setSolitaireID(parseInt(e.target.value))
           // setLoginInformation({ ...loginInformation, fname: e.target.value })
         }
       />
