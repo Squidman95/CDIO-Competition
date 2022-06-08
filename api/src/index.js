@@ -2,10 +2,13 @@ import express from 'express';
 import cors from 'cors';
 import {Server} from 'socket.io';
 import {createServer} from 'http';
+// import submitSolve from './SolutionServices.js';
+import { submitSolve, removeSolve, getGroupSolves, getAllSolves } from './SolutionServices.js';
 
 console.log("Starting server - mode: " + process.env.NODE_ENV);
 
 let chat="";
+let state;
 
 const app = express();
 const PORT = 5000;
@@ -23,43 +26,29 @@ const sockIo = new Server(socketServer,{
 sockIo.on('connection',(socket)=>{
     console.log("User connected! :");
     socket.emit("chat", chat);
+    state = getAllSolves();
+    socket.emit("state", state);
+    console.log(state);
+
     socket.on('msg', (message)=>{
         chat+="\r\n" + socket.id + ": " + message;
         console.log("chatState: " + chat);
-        sockIo.emit("chat", chat)
-
+        sockIo.emit("chat", chat);
     })
+    socket.on('submit', ({groupid, solitaireid}) => {
+        console.log("Submission: " + obj);
+        state = submitSolve(groupid, solitaireid)
+        sockIo.emit("state", state)
+    })
+    socket.on('remove', ({groupid, solitaireid}) => {
+        console.log("Removing: " + obj);
+        state = removeSolve(groupid, solitaireid)
+        sockIo.emit("state", state)
+    })
+    
     socket.on('disconnect',()=>{
         console.log("User disconnected!");
     })
-});
-
-app.get('/solutions/:groupid', (req,res) => {
-    let group = dbservices.getSolutions(req.params.groupid);
-    if (group === null || group === undefined) {
-        res.status(404).send('Group does not exist');
-    } else {
-        res.status(200).send(group);
-    }
-});
-
-app.put('/solutions/:groupid/:solitaireid', (req,res) => {
-    let solution = dbservices.submitSolve(req.params.groupid, req.params.solitaireid);
-    if (solution === null || solution === undefined) {
-        res.status(404).send('Group or solution does not exist');
-    } else {
-        res.status(200).send(basketProduct);
-    }
-});
-
-
-app.delete('/solutions/:groupid/:solitaireid', (req,res) => {
-    let group = dbservices.removeSolve(req.params.groupid, req.params.solitaireid);
-    if(group === null || group === undefined) {
-        res.status(404).send('Group or solution does not exist');
-    } else {
-        res.status(200).send(group);
-    }
 });
 
 // For invalid routes

@@ -12,7 +12,11 @@ const callBackend = async (setBackend, setChat)=>{
     socket = socketIOClient(BASEURL);
     console.log(socket)
     socket.on("chat",(remoteChat)=>{
-    setChat(remoteChat);
+        setChat(remoteChat);
+    })
+    socket.on("state",(state)=>{
+        // setChat(state);
+        console.log(state);
     })
 }
 
@@ -21,4 +25,9 @@ const sendMessage = (message, setMessage)=>{
     setMessage("");
 }
 
-export {callBackend, sendMessage}
+const submitSolution = (message, setMessage)=>{
+    socket.emit('msg',message);
+    setMessage("");
+}
+
+export {callBackend, sendMessage, submitSolution}
