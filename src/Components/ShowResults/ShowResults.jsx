@@ -3,13 +3,17 @@ import Card from "../Card/Card";
 import "./ShowResults.scss";
 import ReactApexChart from "react-apexcharts";
 
-const SearchResult = (props) => {
+const ShowResults = (props) => {
   let { groups = [] } = props;
+
+  let sortedGroups = groups
+    .sort((a, b) => a.solves.length - b.solves.length - 0.01 * a.groupid)
+    .reverse();
 
   let state = {
     series: [
       {
-        data: groups.map((group, index) => group.solves.length),
+        data: sortedGroups.map((group, index) => group.solves.length),
         // data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
       },
     ],
@@ -28,18 +32,19 @@ const SearchResult = (props) => {
           },
         },
       },
-      colors: [
-        "#33b2df",
-        "#546E7A",
-        "#d4526e",
-        "#13d8aa",
-        "#A5978B",
-        "#2b908f",
-        "#f9a3a4",
-        "#90ee7e",
-        "#f48024",
-        "#69d2e7",
-      ],
+      colors: groups.map((group, index) => group.color),
+      //   colors: [
+      //     "#33b2df",
+      //     "#546E7A",
+      //     "#d4526e",
+      //     "#13d8aa",
+      //     "#A5978B",
+      //     "#2b908f",
+      //     "#f9a3a4",
+      //     "#90ee7e",
+      //     "#f48024",
+      //     "#69d2e7",
+      //   ],
       dataLabels: {
         enabled: true,
         textAnchor: "start",
@@ -60,7 +65,7 @@ const SearchResult = (props) => {
       },
       xaxis: {
         categories: groups.map(
-          (group, index) =>
+          (group) =>
             `Group ${group.groupid} - ${group.solves.map(
               (elem) => elem.solitaireid
             )}`
@@ -72,12 +77,12 @@ const SearchResult = (props) => {
         },
       },
       title: {
-        text: "Custom DataLabels",
+        text: "Results",
         align: "center",
         floating: true,
       },
       subtitle: {
-        text: "Category Names as DataLabels inside bars",
+        text: "",
         align: "center",
       },
       tooltip: {
@@ -118,4 +123,4 @@ const SearchResult = (props) => {
   );
 };
 
-export default SearchResult;
+export default ShowResults;

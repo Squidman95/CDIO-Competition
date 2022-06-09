@@ -1,34 +1,7 @@
 [
   {
     "groupid": "1",
-    "solves": [
-      {
-        "solitaireid": 1
-      },
-      {
-        "solitaireid": 2
-      },
-      {
-        "solitaireid": 3
-      },
-      {
-        "solitaireid": 4
-      }
-    ]
-  },
-  {
-    "groupid": "2",
-    "solves": [
-      {
-        "solitaireid": 1
-      },
-      {
-        "solitaireid": 3
-      }
-    ]
-  },
-  {
-    "groupid": "3",
+    "color": "#33b2df",
     "solves": [
       {
         "solitaireid": 1
@@ -44,11 +17,51 @@
       },
       {
         "solitaireid": 5
+      },
+      {
+        "solitaireid": 6
+      }
+    ]
+  },
+  {
+    "groupid": "2",
+    "color": "#546E7A",
+    "solves": [
+      {
+        "solitaireid": 1
+      }
+    ]
+  },
+  {
+    "groupid": "3",
+    "color": "#546E7A",
+    "solves": [
+      {
+        "solitaireid": 1
+      },
+      {
+        "solitaireid": 2
+      },
+      {
+        "solitaireid": 3
+      },
+      {
+        "solitaireid": 4
+      },
+      {
+        "solitaireid": 5
+      },
+      {
+        "solitaireid": 6
+      },
+      {
+        "solitaireid": 7
       }
     ]
   },
   {
     "groupid": "4",
+    "color": "#546E7A",
     "solves": [
       {
         "solitaireid": 4
@@ -60,6 +73,7 @@
   },
   {
     "groupid": "5",
+    "color": "#546E7A",
     "solves": [
       {
         "solitaireid": 3
@@ -68,6 +82,7 @@
   },
   {
     "groupid": "6",
+    "color": "#546E7A",
     "solves": [
       {
         "solitaireid": 2

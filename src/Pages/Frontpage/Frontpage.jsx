@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./Frontpage.scss";
+import "./FrontPage.scss";
 import logo from "../../logo.svg";
 import Button from "../../Components/Button/Button";
 import Card from "../../Components/Card/Card";
 import ShowResults from "../../Components/ShowResults/ShowResults";
 // import ApexChart from "../../Components/Chart/Chart";
 
-const Frontpage = (props) => {
+const FrontPage = (props) => {
   let { groups = [] } = props;
 
   return (
     <div className="Frontpage-Content">
-      {/* <img src={logo} className="App-logo" alt="logo" />
-      <p>Den store CDIO - hjemmeside - Tester Hooks</p> */}
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <h1>Den store CDIO 2022 hjemmeside</h1>
 
       <div className="Frontpage-resultscontainer">
         <ShowResults groups={groups} />
@@ -28,9 +28,20 @@ const Frontpage = (props) => {
             );
           })}
         </div> */}
+        <div className="ButtonContainer">
+          <Button
+            to="/GroupPage"
+            onClick={() => {
+              console.log("Navigating to group 1 inputpage");
+            }}
+            imageSrc="/assets/images/icons/horse-icon.png"
+            imageClass="default-img-loc"
+            btnText="Group Page!"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Frontpage;
+export default FrontPage;

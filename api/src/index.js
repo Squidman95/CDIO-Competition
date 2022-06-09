@@ -52,12 +52,13 @@ sockIo.on('connection',(socket)=>{
     })
 });
 
+
+app.use(express.static('src/public'));
+
 // For invalid routes
 app.get('*', (req, res) => {
     res.status(404).send('404! This is an invalid URL.');
 });
-
-app.use(express.static('src/public'));
 
 socketServer.listen(PORT, ()=>{
     console.log("Server running on: " + PORT);

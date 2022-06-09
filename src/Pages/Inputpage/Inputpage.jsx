@@ -8,10 +8,10 @@ import {
 } from "../../Services/SocketServices.js";
 import Inputbox from "../../Components/Inputbox/Inputbox";
 import Button from "../../Components/Button/Button";
-import "./Inputpage.scss";
+import "./InputPage.scss";
 import ShowResults from "../../Components/ShowResults/ShowResults";
 
-const Inputpage = (props) => {
+const InputPage = (props) => {
   let { groups = [] } = props;
   let { groupid: groupID } = useParams();
   const [solitaireID, setSolitaireID] = useState(1);
@@ -76,4 +76,4 @@ const Inputpage = (props) => {
   );
 };
 
-export default Inputpage;
+export default InputPage;

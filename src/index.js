@@ -13,8 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
         <Routes>
-            <Route path="Inputpage/:groupid" element={<App page = {"Inputpage"} />} />
-            <Route path="/" element={<App page = {"Frontpage"}/>}/>
+            <Route path="InputPage/:groupid" element={<App page = {"InputPage"} />} />
+            <Route path="GroupPage" element={<App page = {"GroupPage"} />} />
+            <Route path="/" element={<App page = {"FrontPage"}/>}/>
         </Routes>
     </BrowserRouter>
 );

@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.scss';
 import React, {useEffect, useState} from 'react'
-import Frontpage from './Pages/Frontpage/Frontpage.jsx';
-import Inputpage from './Pages/Inputpage/Inputpage.jsx';
+import FrontPage from './Pages/FrontPage/FrontPage.jsx';
+import InputPage from './Pages/InputPage/InputPage.jsx';
 import Chart from 'react-apexcharts'
 
 import {callBackend, sendMessage} from "./Services/SocketServices";
+import GroupPage from './Pages/GroupPage/GroupPage';
 
 
 // import socketIOClient from 'socket.io-client';
@@ -52,13 +53,11 @@ function App(props) {
 return (
   <div className="App">
     <div className='App-content-container'>
-        {props.page === "Inputpage" ? <Inputpage groups={solutionData}/> : null}
-        {props.page === "Frontpage" ? <Frontpage groups={solutionData}/> : null}
+        {props.page === "GroupPage" ? <GroupPage groups={solutionData}/> : null}
+        {props.page === "InputPage" ? <InputPage groups={solutionData}/> : null}
+        {props.page === "FrontPage" ? <FrontPage groups={solutionData}/> : null}
     </div>
-    <button onClick={createBackendConnection}>Test backend - make connection</button>
     {backend && <>
-      <div> Backend says : {backend}
-      </div>
       <pre>{chat} </pre>
       <input type="text" value={message} onChange={(e)=>setMessage(e.target.value)}></input>
       <button onClick={()=>sendMessage(message, setMessage)}> send message</button>
