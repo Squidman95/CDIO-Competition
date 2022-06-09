@@ -34,7 +34,7 @@
   },
   {
     "groupid": "3",
-    "color": "#546E7A",
+    "color": "#d4526e",
     "solves": [
       {
         "solitaireid": 1
@@ -61,7 +61,7 @@
   },
   {
     "groupid": "4",
-    "color": "#546E7A",
+    "color": "#13d8aa",
     "solves": [
       {
         "solitaireid": 4
@@ -73,16 +73,22 @@
   },
   {
     "groupid": "5",
-    "color": "#546E7A",
+    "color": "#A5978B",
     "solves": [
       {
         "solitaireid": 3
+      },
+      {
+        "solitaireid": 1
+      },
+      {
+        "solitaireid": 2
       }
     ]
   },
   {
     "groupid": "6",
-    "color": "#546E7A",
+    "color": "#2b908f",
     "solves": [
       {
         "solitaireid": 2
