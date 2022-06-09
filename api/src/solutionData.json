@@ -3,20 +3,16 @@
     "groupid": "1",
     "solves": [
       {
-        "solitaireid": 1,
-        "solved": "true"
+        "solitaireid": 1
       },
       {
-        "solitaireid": 2,
-        "solved": "true"
+        "solitaireid": 2
       },
       {
-        "solitaireid": 3,
-        "solved": "true"
+        "solitaireid": 3
       },
       {
-        "solitaireid": 4,
-        "solved": "true"
+        "solitaireid": 4
       }
     ]
   },
@@ -24,27 +20,56 @@
     "groupid": "2",
     "solves": [
       {
-        "solitaireid": 1,
+        "solitaireid": 1
+      },
+      {
+        "solitaireid": 2
+      },
+      {
+        "solitaireid": 3
+      },
+      {
+        "solitaireid": 12,
         "solved": "true"
       },
       {
-        "solitaireid": 2,
-        "solved": "true"
-      },
-      {
-        "solitaireid": 3,
+        "solitaireid": 13,
         "solved": "true"
       }
     ]
   },
   {
     "groupid": "3",
-    "solves": {
-      "1": false,
-      "2": false,
-      "3": false,
-      "4": true,
-      "5": false
-    }
+    "solves": []
+  },
+  {
+    "groupid": "4",
+    "solves": [
+      {
+        "solitaireid": 4
+      },
+      {
+        "solitaireid": 7
+      }
+    ]
+  },
+  {
+    "groupid": "5",
+    "solves": [
+      {
+        "solitaireid": 3
+      }
+    ]
+  },
+  {
+    "groupid": "6",
+    "solves": [
+      {
+        "solitaireid": 2
+      },
+      {
+        "solitaireid": 10
+      }
+    ]
   }
 ]

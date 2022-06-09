@@ -5,7 +5,7 @@ let socket;
 
 
 // createBackendConnection
-const callBackend = async (setBackend, setChat)=>{
+const callBackend = async (setBackend, setChat, setSolutionData)=>{
     const res = await fetch(BASEAPI);
     const text = await res.text();
     setBackend(text);
@@ -17,6 +17,7 @@ const callBackend = async (setBackend, setChat)=>{
     socket.on("state",(state)=>{
         // setChat(state);
         console.log(state);
+        setSolutionData(state);
     })
 }
 

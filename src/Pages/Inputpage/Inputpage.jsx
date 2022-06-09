@@ -6,17 +6,13 @@ import {
   submitSolution,
   removeSolution,
 } from "../../Services/SocketServices.js";
-// import {
-//   getSolutions,
-//   submitSolve,
-//   removeSolve,
-// } from "../../Services/DBServices";
 import Inputbox from "../../Components/Inputbox/Inputbox";
 import Button from "../../Components/Button/Button";
 import "./Inputpage.scss";
+import ShowResults from "../../Components/ShowResults/ShowResults";
 
 const Inputpage = (props) => {
-  // let solitaireID = 1; // tmp value
+  let { groups = [] } = props;
   let { groupid: groupID } = useParams();
   const [solitaireID, setSolitaireID] = useState(1);
 
@@ -72,6 +68,9 @@ const Inputpage = (props) => {
             />
           </div>
         </div>
+      </div>
+      <div className="Inputpage-resultscontainer">
+        <ShowResults groups={groups} />
       </div>
     </div>
   );

@@ -6,7 +6,16 @@
 }
 
 .Frontpage-Content {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
 }
+
+// .ShowResults-Cards{
+//     display:grid;
+//     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+//     gap: 2vw;
+//     margin: 2vw;
+//     margin-bottom: 0;
+// }

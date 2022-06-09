@@ -16,6 +16,7 @@ function App(props) {
   const [backend, setBackend] = useState(null);
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState("chat");
+  const [solutionData, setSolutionData] = useState([]);
 
   // const callBackend = async ()=>{
   //   const res = await fetch(BASEAPI);
@@ -33,8 +34,14 @@ function App(props) {
   //   setMessage("");
   // }
 
+  useEffect(() => {
+    if(!backend) {
+      createBackendConnection();
+    }
+  }, []);
+
   function createBackendConnection() {
-    callBackend(setBackend, setChat);
+    callBackend(setBackend, setChat, setSolutionData);
   }
 
 // Made onClick in the following 2 ways to show both methods of calling a function. They work the same way
@@ -44,8 +51,8 @@ function App(props) {
 return (
   <div className="App">
     <div className='App-content-container'>
-        {props.page === "Inputpage" ? <Inputpage/> : null}
-        {props.page === "Frontpage" ? <Frontpage/> : null}
+        {props.page === "Inputpage" ? <Inputpage groups={solutionData}/> : null}
+        {props.page === "Frontpage" ? <Frontpage groups={solutionData}/> : null}
     </div>
     <button onClick={createBackendConnection}>Test backend - make connection</button>
     {backend && <>
