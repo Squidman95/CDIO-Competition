@@ -4,13 +4,16 @@ import logo from "../../logo.svg";
 import Button from "../../Components/Button/Button";
 import Card from "../../Components/Card/Card";
 import ShowResults from "../../Components/ShowResults/ShowResults";
+// import ApexChart from "../../Components/Chart/Chart";
 
 const Frontpage = (props) => {
   let { groups = [] } = props;
+
   return (
     <div className="Frontpage-Content">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Den store CDIO - hjemmeside - Tester Hooks</p>
+      {/* <img src={logo} className="App-logo" alt="logo" />
+      <p>Den store CDIO - hjemmeside - Tester Hooks</p> */}
+
       <div className="Frontpage-resultscontainer">
         <ShowResults groups={groups} />
         {/* <div className="ShowResults-Cards">

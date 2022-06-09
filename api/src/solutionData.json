@@ -23,24 +23,29 @@
         "solitaireid": 1
       },
       {
+        "solitaireid": 3
+      }
+    ]
+  },
+  {
+    "groupid": "3",
+    "solves": [
+      {
+        "solitaireid": 1
+      },
+      {
         "solitaireid": 2
       },
       {
         "solitaireid": 3
       },
       {
-        "solitaireid": 12,
-        "solved": "true"
+        "solitaireid": 4
       },
       {
-        "solitaireid": 13,
-        "solved": "true"
+        "solitaireid": 5
       }
     ]
-  },
-  {
-    "groupid": "3",
-    "solves": []
   },
   {
     "groupid": "4",

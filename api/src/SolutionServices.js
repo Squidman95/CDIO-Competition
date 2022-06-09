@@ -20,8 +20,7 @@ function getAllSolves() {
 function submitSolve(groupID, solitaireID){
     console.log(`Trying to update solve ${solitaireID} for group ${groupID}`);
     let solve = {
-        "solitaireid": solitaireID,
-        "solved": "true"
+        "solitaireid": solitaireID
     };
     let json = JSON.parse(fs.readFileSync(solutionDataPath, {encoding:'utf8', flag:'r'}));
     // console.log("JSON object before addition");
@@ -46,24 +45,26 @@ function submitSolve(groupID, solitaireID){
 function removeSolve(groupID, solitaireID){
     console.log(`Trying to remove solve ${solitaireID} for group ${groupID}`);
     let json = JSON.parse(fs.readFileSync(solutionDataPath, {encoding:'utf8', flag:'r'}));
-    console.log("JSON object before deletion");
-    console.log(json);
-
-    let group = json.filter(g => {return g.groupid == groupID})[0];
+    // console.log("JSON grp before deletion");
+    // console.log(json);
     const index = json.map(g => g.groupid).indexOf(groupID);
 
-    removeById(group.solves, solitaireID);
+    let group = json.filter(g => {return g.groupid == groupID})[0];
+    let groupSolves = group.solves.filter(s => s.solitaireid !== solitaireID);
+    group.solves = groupSolves;
+
+    // removeById(group.solves, solitaireID);
 
     json[index] = group;
     fs.writeFileSync(solutionDataPath, JSON.stringify(json, null, 2));
-    console.log("JSON object after deletion");
-    console.log(json);
+    // console.log("JSON object after deletion");
+    // console.log(json);
     return json;
 }
 
 const removeById = (jsonArray, solitaireID) => {
     const index = jsonArray.findIndex(element => {
-        return element.id === String(itemId);
+        return element.id === String(solitaireID);
     });
     if(index === -1){
         return false;

@@ -3,6 +3,7 @@ import './App.scss';
 import React, {useEffect, useState} from 'react'
 import Frontpage from './Pages/Frontpage/Frontpage.jsx';
 import Inputpage from './Pages/Inputpage/Inputpage.jsx';
+import Chart from 'react-apexcharts'
 
 import {callBackend, sendMessage} from "./Services/SocketServices";
 
