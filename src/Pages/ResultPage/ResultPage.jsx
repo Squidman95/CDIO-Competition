@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./FrontPage.scss";
+import "./ResultPage.scss";
 import Button from "../../Components/Button/Button";
 import ShowResults from "../../Components/ShowResults/ShowResults";
 // import ApexChart from "../../Components/Chart/Chart";
 
-const FrontPage = (props) => {
+const ResultPage = (props) => {
   let { groups = [] } = props;
 
   return (
-    <div className="Frontpage-Content">
+    <div className="ResultPage-Content">
       <div className="ButtonContainer">
         <Button
           to="/GroupPage"
@@ -22,11 +22,11 @@ const FrontPage = (props) => {
       </div>
       <h1>Den store CDIO 2022 hjemmeside</h1>
 
-      <div className="Frontpage-resultscontainer">
+      <div className="ResultPage-resultscontainer">
         <ShowResults groups={groups} />
       </div>
     </div>
   );
 };
 
-export default FrontPage;
+export default ResultPage;

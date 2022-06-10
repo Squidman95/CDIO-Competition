@@ -15,7 +15,7 @@ root.render(
         <Routes>
             <Route path="InputPage/:groupid" element={<App page = {"InputPage"} />} />
             <Route path="GroupPage" element={<App page = {"GroupPage"} />} />
-            <Route path="/" element={<App page = {"FrontPage"}/>}/>
+            <Route path="/" element={<App page = {"ResultPage"}/>}/>
         </Routes>
     </BrowserRouter>
 );

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import React, {useEffect, useState} from 'react'
-import FrontPage from './Pages/FrontPage/FrontPage.jsx';
+import ResultPage from './Pages/ResultPage/ResultPage.jsx';
 import InputPage from './Pages/InputPage/InputPage.jsx';
 import Chart from 'react-apexcharts'
 
@@ -55,7 +55,7 @@ return (
     <div className='App-content-container'>
         {props.page === "GroupPage" ? <GroupPage groups={solutionData}/> : null}
         {props.page === "InputPage" ? <InputPage groups={solutionData}/> : null}
-        {props.page === "FrontPage" ? <FrontPage groups={solutionData}/> : null}
+        {props.page === "ResultPage" ? <ResultPage groups={solutionData}/> : null}
     </div>
     {backend && <>
       <pre>{chat} </pre>
