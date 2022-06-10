@@ -11,34 +11,21 @@ const FrontPage = (props) => {
 
   return (
     <div className="Frontpage-Content">
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <div className="ButtonContainer">
+        <Button
+          to="/GroupPage"
+          onClick={() => {
+            console.log("Navigating to group 1 inputpage");
+          }}
+          imageSrc="/assets/images/icons/horse-icon.png"
+          imageClass="default-img-loc"
+          btnText="Group Page!"
+        />
+      </div>
       <h1>Den store CDIO 2022 hjemmeside</h1>
 
       <div className="Frontpage-resultscontainer">
         <ShowResults groups={groups} />
-        {/* <div className="ShowResults-Cards">
-          {groups.map((group, index) => {
-            return (
-              <Card
-                groupID={group.groupid}
-                imageSrc="/assets/images/icons/cat-icon.png"
-                header={`Group ${group.groupid}`}
-                subtext={group.solves.length}
-              />
-            );
-          })}
-        </div> */}
-        <div className="ButtonContainer">
-          <Button
-            to="/GroupPage"
-            onClick={() => {
-              console.log("Navigating to group 1 inputpage");
-            }}
-            imageSrc="/assets/images/icons/horse-icon.png"
-            imageClass="default-img-loc"
-            btnText="Group Page!"
-          />
-        </div>
       </div>
     </div>
   );
