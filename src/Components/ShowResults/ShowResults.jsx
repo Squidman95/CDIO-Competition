@@ -102,12 +102,12 @@ const ShowResults = (props) => {
   };
 
   return (
-    <div className="ShowResults-Cards">
+    <div className="ShowResults-Graph">
       <ReactApexChart
         options={state.options}
         series={state.series}
         type="bar"
-        height={380}
+        height={550}
       />
       {/* {groups.map((group, index) => {
         return (

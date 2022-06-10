@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react'
 import ResultPage from './Pages/ResultPage/ResultPage.jsx';
 import InputPage from './Pages/InputPage/InputPage.jsx';
 import Chart from 'react-apexcharts'
-
+import Topbar from "./Components/Topbar/Topbar";
 import {callBackend, sendMessage} from "./Services/SocketServices";
 import GroupPage from './Pages/GroupPage/GroupPage';
 
@@ -19,6 +19,7 @@ function App(props) {
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState("chat");
   const [solutionData, setSolutionData] = useState([]);
+  const [topbarText, setTopbarText] = useState("Den store CDIO 2022 hjemmeside!");
 
   // const callBackend = async ()=>{
   //   const res = await fetch(BASEAPI);
@@ -52,6 +53,9 @@ function App(props) {
 
 return (
   <div className="App">
+    <div className='App-topbar-container'> 
+      <Topbar setTopbarText={setTopbarText} topbarText={topbarText}/>
+    </div>
     <div className='App-content-container'>
         {props.page === "GroupPage" ? <GroupPage groups={solutionData}/> : null}
         {props.page === "InputPage" ? <InputPage groups={solutionData}/> : null}

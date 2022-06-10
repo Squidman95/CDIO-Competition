@@ -9,7 +9,7 @@ const ResultPage = (props) => {
 
   return (
     <div className="ResultPage-Content">
-      <div className="ButtonContainer">
+      {/* <div className="ButtonContainer">
         <Button
           to="/GroupPage"
           onClick={() => {
@@ -20,11 +20,11 @@ const ResultPage = (props) => {
           btnText="Group Page!"
         />
       </div>
-      <h1>Den store CDIO 2022 hjemmeside</h1>
+      <h1>Den store CDIO 2022 hjemmeside</h1> */}
 
-      <div className="ResultPage-resultscontainer">
-        <ShowResults groups={groups} />
-      </div>
+      {/* <div className="ResultPage-resultscontainer"> */}
+      <ShowResults groups={groups} />
+      {/* </div> */}
     </div>
   );
 };
