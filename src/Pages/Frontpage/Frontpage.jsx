@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./FrontPage.scss";
-import logo from "../../logo.svg";
 import Button from "../../Components/Button/Button";
-import Card from "../../Components/Card/Card";
 import ShowResults from "../../Components/ShowResults/ShowResults";
 // import ApexChart from "../../Components/Chart/Chart";
 
