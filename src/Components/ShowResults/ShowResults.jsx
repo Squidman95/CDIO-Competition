@@ -107,7 +107,7 @@ const ShowResults = (props) => {
         options={state.options}
         series={state.series}
         type="bar"
-        height={550}
+        height={450}
       />
       {/* {groups.map((group, index) => {
         return (
