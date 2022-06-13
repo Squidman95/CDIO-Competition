@@ -53,17 +53,30 @@
     "color": "#90ee7e",
     "solves": [
       {
-        "solitaireid": 4
+        "solitaireid": 8
       },
       {
-        "solitaireid": 8
+        "solitaireid": 4
       }
     ]
   },
   {
     "groupid": 9,
     "color": "#f48024",
-    "solves": []
+    "solves": [
+      {
+        "solitaireid": 10
+      },
+      {
+        "solitaireid": 9
+      },
+      {
+        "solitaireid": 1
+      },
+      {
+        "solitaireid": 4
+      }
+    ]
   },
   {
     "groupid": 10,
