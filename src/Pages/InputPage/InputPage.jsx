@@ -5,6 +5,7 @@ import {
   sendMessage,
   submitSolution,
   removeSolution,
+  submissionExists,
 } from "../../Services/SocketServices.js";
 import Inputbox from "../../Components/Inputbox/Inputbox";
 import Button from "../../Components/Button/Button";
@@ -19,6 +20,10 @@ const InputPage = (props) => {
   function submitSolitaire(solitaireID) {
     console.log(`Solution ID: ` + solitaireID);
 
+    if (submissionExists(groups, groupID, solitaireID)) {
+      alert("That solution already exists for your group: " + groupID);
+    }
+
     if (Number.isInteger(solitaireID)) {
       console.log(
         `Input is integer: ${solitaireID} and groupID is valid: ${groupID}`
@@ -29,8 +34,28 @@ const InputPage = (props) => {
     }
   }
 
+  // function submissionExists(groups, groupID, solitaireID) {
+  //   let group = groups.filter((g) => {
+  //     return g.groupid == groupID;
+  //   })[0];
+
+  //   let existingSolution = group.solves.filter((s) => {
+  //     return s.solitaireid == solitaireID;
+  //   })[0];
+
+  //   if (existingSolution === undefined) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
+
   function regretSubmit(solitaireID) {
     console.log(`Solution ID: ` + solitaireID);
+    if (!submissionExists(groups, groupID, solitaireID)) {
+      alert("No solution exists with that id for group: " + groupID);
+    }
+
     if (Number.isInteger(solitaireID)) {
       console.log(
         `Input is integer: ${solitaireID} and groupID is valid: ${groupID}`

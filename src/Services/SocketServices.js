@@ -36,4 +36,22 @@ const removeSolution = (groupid, solitaireid)=>{
     console.log(`Emit removal of solution ${solitaireid} for group ${groupid}`);
 }
 
-export {callBackend, sendMessage, submitSolution, removeSolution}
+// Util function:
+const submissionExists = (groups, groupID, solitaireID)=>{
+    let group = groups.filter((g) => {
+      return g.groupid == groupID;
+    })[0];
+
+    let existingSolution = group.solves.filter((s) => {
+      return s.solitaireid == solitaireID;
+    })[0];
+
+    if (existingSolution === undefined) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+
+export {callBackend, sendMessage, submitSolution, removeSolution, submissionExists}
