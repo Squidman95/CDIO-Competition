@@ -38,20 +38,33 @@ const removeSolution = (groupid, solitaireid)=>{
 
 // Util function:
 const submissionExists = (groups, groupID, solitaireID)=>{
+    console.log("Group: " + groupID);
     let group = groups.filter((g) => {
-      return g.groupid == groupID;
+      return g.groupid === groupID;
     })[0];
 
     let existingSolution = group.solves.filter((s) => {
-      return s.solitaireid == solitaireID;
+      return s.solitaireid === solitaireID;
     })[0];
 
     if (existingSolution === undefined) {
-      return false;
+        return false;
     } else {
-      return true;
+        return true;
+    }
+  }
+
+  const submissionValid = (groups, solitaireID)=>{
+    let validSolitaireID = groups.filter((g) => {
+        return g.groupid === solitaireID;
+      })[0];
+    
+    if(validSolitaireID === undefined) {
+        return false;
+    } else {
+        return true;
     }
   }
 
 
-export {callBackend, sendMessage, submitSolution, removeSolution, submissionExists}
+export {callBackend, sendMessage, submitSolution, removeSolution, submissionExists, submissionValid}

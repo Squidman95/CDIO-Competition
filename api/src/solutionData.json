@@ -1,172 +1,118 @@
 [
   {
-    "groupid": "1",
+    "groupid": 1,
     "color": "#33b2df",
     "solves": [
       {
         "solitaireid": 1
-      },
-      {
-        "solitaireid": 2
-      },
-      {
-        "solitaireid": 3
-      },
-      {
-        "solitaireid": 4
-      },
-      {
-        "solitaireid": 5
-      },
-      {
-        "solitaireid": 6
       }
     ]
   },
   {
-    "groupid": "2",
+    "groupid": 2,
     "color": "#546E7A",
     "solves": [
       {
         "solitaireid": 1
+      },
+      {
+        "solitaireid": 2
+      },
+      {
+        "solitaireid": 3
       }
     ]
   },
   {
-    "groupid": "3",
+    "groupid": 3,
     "color": "#d4526e",
-    "solves": [
-      {
-        "solitaireid": 1
-      },
-      {
-        "solitaireid": 2
-      },
-      {
-        "solitaireid": 3
-      },
-      {
-        "solitaireid": 4
-      },
-      {
-        "solitaireid": 5
-      },
-      {
-        "solitaireid": 6
-      },
-      {
-        "solitaireid": 7
-      }
-    ]
+    "solves": []
   },
   {
-    "groupid": "4",
+    "groupid": 4,
     "color": "#13d8aa",
-    "solves": [
-      {
-        "solitaireid": 4
-      },
-      {
-        "solitaireid": 7
-      },
-      {
-        "solitaireid": 2
-      },
-      {
-        "solitaireid": 3
-      }
-    ]
+    "solves": []
   },
   {
-    "groupid": "5",
+    "groupid": 5,
     "color": "#A5978B",
-    "solves": [
-      {
-        "solitaireid": 3
-      },
-      {
-        "solitaireid": 1
-      },
-      {
-        "solitaireid": 2
-      }
-    ]
+    "solves": []
   },
   {
-    "groupid": "6",
+    "groupid": 6,
     "color": "#2b908f",
-    "solves": [
-      {
-        "solitaireid": 2
-      },
-      {
-        "solitaireid": 10
-      }
-    ]
+    "solves": []
   },
   {
-    "groupid": "7",
+    "groupid": 7,
     "color": "#f9a3a4",
     "solves": []
   },
   {
-    "groupid": "8",
+    "groupid": 8,
     "color": "#90ee7e",
-    "solves": []
+    "solves": [
+      {
+        "solitaireid": 4
+      },
+      {
+        "solitaireid": 8
+      }
+    ]
   },
   {
-    "groupid": "9",
+    "groupid": 9,
     "color": "#f48024",
     "solves": []
   },
   {
-    "groupid": "10",
+    "groupid": 10,
     "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "11",
-    "color": "#8132a8",
+    "groupid": 11,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "12",
-    "color": "#9aa832",
+    "groupid": 12,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "13",
-    "color": "#a89432",
+    "groupid": 13,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "14",
-    "color": "#55a832",
+    "groupid": 14,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "15",
-    "color": "#e5f71b",
+    "groupid": 15,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "16",
-    "color": "#a83271",
+    "groupid": 16,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "20",
-    "color": "#a83236",
+    "groupid": 20,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "21",
-    "color": "#7932a8",
+    "groupid": 21,
+    "color": "#69d2e7",
     "solves": []
   },
   {
-    "groupid": "25",
-    "color": "#0afa0a",
+    "groupid": 25,
+    "color": "#69d2e7",
     "solves": []
   }
 ]
