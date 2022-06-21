@@ -2,26 +2,12 @@
   {
     "groupid": 1,
     "color": "#33b2df",
-    "solves": [
-      {
-        "solitaireid": 1
-      }
-    ]
+    "solves": []
   },
   {
     "groupid": 2,
     "color": "#546E7A",
-    "solves": [
-      {
-        "solitaireid": 1
-      },
-      {
-        "solitaireid": 2
-      },
-      {
-        "solitaireid": 3
-      }
-    ]
+    "solves": []
   },
   {
     "groupid": 3,
@@ -51,32 +37,12 @@
   {
     "groupid": 8,
     "color": "#90ee7e",
-    "solves": [
-      {
-        "solitaireid": 8
-      },
-      {
-        "solitaireid": 4
-      }
-    ]
+    "solves": []
   },
   {
     "groupid": 9,
     "color": "#f48024",
-    "solves": [
-      {
-        "solitaireid": 10
-      },
-      {
-        "solitaireid": 9
-      },
-      {
-        "solitaireid": 1
-      },
-      {
-        "solitaireid": 4
-      }
-    ]
+    "solves": []
   },
   {
     "groupid": 10,
